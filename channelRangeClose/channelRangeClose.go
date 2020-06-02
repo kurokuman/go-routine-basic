@@ -15,7 +15,7 @@ func goroutine1(s []int, ch chan int) {
 
 func main() {
 	s := []int{1, 2, 3, 4, 5}
-	ch := make(chan int)
+	ch := make(chan int, len(s))
 
 	go goroutine1(s, ch)
 
