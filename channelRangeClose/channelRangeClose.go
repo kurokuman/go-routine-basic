@@ -8,8 +8,10 @@ func goroutine1(s []int, ch chan int) {
 	sum := 0
 	for _, v := range s {
 		sum += v
+		//chに値が渡され、 mainのfor　range でその値が取り出される
 		ch <- sum
 	}
+	//main のforで空のchから値を取らないように、closeを宣言
 	close(ch)
 }
 
